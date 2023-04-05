@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Essays by Montaigne</title>
+    <link rel="stylesheet" href="./commonplace.css" />
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-size: 24px;
+        line-height: 1.5;
+      }
+      .artwork {
+        background-image: url("Montaigne, essays/one.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 500px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+      }
+      .second_image {
+        background-image: url("Montaigne, essays/three.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 250px;
+        padding-bottom: 250px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        }
+        .third_image {
+        background-image: url("Montaigne, essays/two.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 250px;
+        padding-bottom: 250px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        }
+        .fourth_page {
+        background-color: black;
+        height: 100vh;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .artwork.show,
+      .second_image.show {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .third_image.show{
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+      .fourth_page.show {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="artwork">
+      <div class = "container">
+        <div class="this_text">
+          <p>"… to be everywhere, is to be nowhere.."</p> 
+        </div>
+        </div>
+    </div>
+    <div class="black-bg">
+        <div class="text">
+            <p>"So reader, I am myself the substance of my book"</p>
+          </div>
+    </div>
+    <div class="second_image">
+      <div class = "container">
+        <div class = "second_text">
+          <p>"Men fresh from the hands of the Gods"</p>
+    </div>
+    </div>
+    </div>
+    <div class="third_image">
+      <div class = "container">
+        <div class = "third_text">
+          <p>"So reader, I am myself the substance of my book"</p>
+    </div>
+    </div>
+    </div>
+    <div class="fourth_page">
+      <div class = "fourth_page_text">
+        <a href = "./cervantes.html"><p>Don Quixote by Cervantes</p></a>
+    </div>
+    </div>
+    <script>
+      const artwork = document.querySelector('.artwork');
+      const second_image = document.querySelector('.second_image');
+      const third_image = document.querySelector('.third_image');
+      const fourth_page = document.querySelector('.fourth_page');
+      window.addEventListener('scroll', () => {
+      artwork.classList.add('show');
+      if (window.scrollY > 100) {
+        second_image.classList.add('show');
+      } else if (window.scrollY <= 100 && window.scrollY > 0) {
+        second_image.classList.remove('show');
+        third_image.classList.add('show');
+      } else if (window.scrollY <= 0){
+        second_image.classList.remove('show');
+        third_image.classList.add('show');
+      } else{
+        third_image.classList.remove('show');
+        fourth_page.classList.add('show');
+      }
+    });
+    </script>
+    <style>
+        .text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                font-size: 79px;
+                font-family: monospace;
+                animation: fade in 20s;
+            }
+      .black-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+      }
+      .show-black-bg {
+            opacity: 0.5;
+      }
+      .show-text {
+            opacity: 1;
+      }
+      .fourth_page_text{
+        font-family: monospace;
+        font-size: larger;
+        animation: fadeIn 20s;
+        border-radius: 10em;
+        padding: 1.5em;
+        margin: 2.0em 0;
+        box-shadow: rgb(115, 1, 255) 1px 4px 8px 0px;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .fourth_page_text :hover{
+        animation: magic 1s ease-in-out infinite;
+        color: #ea04fb;
+      }
+      @keyframes magic {
+    0% {
+        text-shadow: 0 0 5px rgba(192, 87, 245, 0.5), 0 0 10px rgba(198, 101, 236, 0.5), 0 0 15px rgba(208, 86, 245, 0.5), 0 0 20px rgb(220, 104, 249);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(194, 97, 255, 0.5), 0 0 10px rgba(139, 27, 231, 0.5), 0 0 15px rgba(188, 2, 244, 0.5), 0 0 20px rgb(244, 8, 213), 0 0 30px rgba(241, 5, 241, 0.2);
+    }
+}
+      a{
+        color: white;
+      }
+      .container {
+        position: relative;
+        width: 100%; /* set to your image's width */
+        height: 100%; /* set to your image's height */
+}
+      .this_text{
+        position: absolute;
+        bottom:0;
+        right: 0;
+        text-align: right;
+        font-size: smaller;
+
+        font-family: monospace;
+        color: #ea04fb;
+      }
+      .second_text{
+        position: absolute;
+        bottom:0;
+        right: 0;
+        text-align: right;
+        font-size: 20px;
+        text-shadow: 0 0 10px rgb(166, 112, 3), 0 0 20px rgb(193, 137, 8), 0 0 30px rgb(138, 73, 41), 0 0 40px rgb(200, 37, 4), 0 0 70px rgb(251, 6, 6), 0 0 80px rgb(223, 66, 66), 0 0 100px rgb(255, 0, 0), 0 0 150px rgb(255, 0, 8);
+        font-family: monospace;
+        color: yellow;
+        font-size: larger;
+      }
+      .third_text{
+        position: absolute;
+        top:0;
+        left:0;
+        text-align: left;
+        font-size: 20px;
+        text-shadow: 0 0 10px rgb(166, 3, 3), 0 0 20px rgb(193, 8, 8), 0 0 30px rgb(138, 41, 41), 0 0 40px rgb(200, 4, 4), 0 0 70px rgb(251, 6, 6), 0 0 80px rgb(223, 66, 66), 0 0 100px rgb(255, 0, 0), 0 0 150px rgb(255, 0, 8);
+        font-family: monospace;
+        color: pink;
+      }
+    </style>
+  </body>
+</html>
