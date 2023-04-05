@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script src="ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+        <title>Wangui's CommonPlace</title>
+        <meta name="viewpoint" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./commonplace.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+        <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            VANTA.BIRDS({
+                el: "#vanta",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                backgroundColor: 0x170225,
+                color1:0xfc3cb4,
+                color2: 0xf58438,
+                colorMode: "lerp",
+                wingSpan: 33.00,
+                speedLimit: 10.00,
+                separation: 10.00,
+                alignment: 32.00,
+                cohesion: 26.00,
+                quantity: 6.50,
+                backgroundAlpha: 0.00
+                })
+            setTimeout(() => {
+                const main = document.querySelector('main')
+                main.style.opacity = 1
+                main.style.filter= 'blur(0px)'
+            }, 500)
+        })
+</script>
+    </head>
+    </head>
+    <body>
+        <div class="scroll-container">
+        <div id="vanta"></div>
+        <main>
+        <ul>
+            <li>
+                <a href="./confessions.html">
+                Confessions by St.Augustine
+            </a>
+            </li>
+            <li>
+                <a href="./deFranc.html" target="_blank">
+                The Lais of Marie de France
+            </a>
+            </li>
+            <li>
+                <a href="./dante.html" target="_blank">
+                Inferno by Dante
+            </a>
+            </li>
+            <li>
+                <a href="./essays.html" target="_blank">
+                Essays by Montaigne
+            </a>
+            </li>
+            <li>
+                <a href="./cervantes.html" target="_blank">
+                Don Quixote by Cervantes
+            </li>
+            <li>
+                <a href="./austen.html" target="_blank">
+                Pride and Prejudice by Austen
+            </li>
+            <li>
+                <a href="crimePunishment.html" target="_blank">
+                Crime and Punishment by Dostoevsky
+            </li>
+        </ul>
+    </main>
+    </div>
+    <div class="art-container">
+        <!-- Add your art piece here -->
+        Dog
+        
+      </div>
+    </body>
+</html>
