@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pride and Prejudice by Austen</title>
+    <link rel="stylesheet" href="./commonplace.css" />
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-size: 24px;
+        line-height: 1.5;
+      }
+      .artwork {
+        background-image: url("Austen/one.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 500px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+      }
+      .second_image {
+        background-image: url("Austen/two.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 250px;
+        padding-bottom: 250px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        }
+        .third_image {
+        background-image: url("Confessions by Augustine/third.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 250px;
+        padding-bottom: 250px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        }
+        .fourth_page {
+        background-color: black;
+        height: 100vh;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .artwork.show,
+      .second_image.show {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .third_image.show{
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+      .fourth_page.show {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="artwork">
+      <div class = "container">
+      <div class="this_text">
+        <p>"There are few people whom I really love,</p> 
+        <p>and still fewer of whom I think well. The more I see of the world,</p> 
+        <p>the more am I dissatisfied with it; and every day confirms my belief</p>
+        <p>of the inconsistency of all human characters,</p> 
+        <p>and of the little dependence that can be placed on the appearance of merit or sense."</p>
+      </div>
+      </div>
+    </div>
+    <div class="black-bg">
+        <div class="text">
+            <p>"There are few people whom I really love, and still fewer of whom I think well. The more I see of the world, the more am I dissatisfied with it; and every day confirms my belief of the inconsistency of all human characters, and of the little dependence that can be placed on the appearance of merit or sense."</p>
+          </div>
+    </div>
+    <div class="second_image">
+      <div class = "container">
+        <div class = "second_text">
+          <p>"It is very often nothing but our own vanity that deceives us."</p>
+    </div>
+    </div>
+    <div class = "thirds_text">
+      <p>Pride relates more to our opinion of ourselves,</p> 
+      <p>vanity to what we would have others think of us</p>
+    </div>
+    </div>
+    </div>
+    <div class="fourth_page">
+      <div class = "fourth_page_text">
+        <a href = "./crimePunishment.html"><p>Crime and Punishment by Dostoevsky</p></a>
+    </div>
+    </div>
+    <script>
+      const artwork = document.querySelector('.artwork');
+      const second_image = document.querySelector('.second_image');
+      const third_image = document.querySelector('.third_image');
+      const fourth_page = document.querySelector('.fourth_page');
+      window.addEventListener('scroll', () => {
+      artwork.classList.add('show');
+      if (window.scrollY > 100) {
+        second_image.classList.add('show');
+      } else if (window.scrollY <= 100 && window.scrollY > 0) {
+        second_image.classList.remove('show');
+        third_image.classList.add('show');
+      } else if (window.scrollY <= 0){
+        second_image.classList.remove('show');
+        third_image.classList.add('show');
+      } else{
+        third_image.classList.remove('show');
+        fourth_page.classList.add('show');
+      }
+    });
+    </script>
+    <style>
+        .text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                font-size: 79px;
+                font-family: monospace;
+                animation: fade in 10s;
+            }
+      .black-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+      }
+      .show-black-bg {
+            opacity: 0.5;
+      }
+      .show-text {
+            opacity: 1;
+      }
+      .fourth_page_text{
+        font-family: monospace;
+        font-size: larger;
+        animation: fadeIn 20s;
+        border-radius: 10em;
+        padding: 1.5em;
+        margin: 2.0em 0;
+        box-shadow: rgba(1, 120, 255, 0.467) 1px 4px 8px 0px;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .fourth_page_text :hover{
+        animation: magic 1s ease-in-out infinite;
+        color: #1669a5;
+      }
+      @keyframes magic {
+    0% {
+        text-shadow: 0 0 5px rgba(87, 187, 245, 0.5), 0 0 10px rgba(101, 227, 236, 0.5), 0 0 15px rgba(86, 189, 245, 0.5), 0 0 20px rgb(104, 234, 249);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(97, 189, 255, 0.5), 0 0 10px rgba(27, 166, 231, 0.5), 0 0 15px rgba(2, 204, 244, 0.5), 0 0 20px rgb(8, 165, 244), 0 0 30px rgba(5, 143, 241, 0.2);
+    }
+}
+      a{
+        color: white;
+      }
+      .container {
+        position: relative;
+        width: 100%; /* set to your image's width */
+        height: 100%; /* set to your image's height */
+}
+      .this_text{
+        position: absolute;
+        bottom:0;
+        right: 0;
+        text-align: right;
+        font-size: smaller;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff, 0 0 70px rgb(0, 115, 255), 0 0 80px rgb(31, 55, 130), 0 0 100px #0ff, 0 0 150px #0ff;
+        font-weight: bolder;
+        font-family: monospace;
+      }
+      .second_text{
+        position: absolute;
+        bottom:0;
+        right: 0;
+        text-align: right;
+        font-size: 20px;
+        text-shadow: 0 0 10px rgb(166, 3, 3), 0 0 20px rgb(193, 8, 8), 0 0 30px rgb(138, 41, 41), 0 0 40px rgb(200, 4, 4), 0 0 70px rgb(251, 6, 6), 0 0 80px rgb(223, 66, 66), 0 0 100px rgb(255, 0, 0), 0 0 150px rgb(255, 0, 8);
+        font-family: monospace;
+      }
+      .thirds_text{
+        position: absolute;
+        bottom:0;
+        left:0;
+        text-align: left;
+        font-size: 20px;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff, 0 0 70px rgb(0, 115, 255), 0 0 80px rgb(31, 55, 130), 0 0 100px #0ff, 0 0 150px #0ff;
+        font-family: monospace;
+      }
+    </style>
+  </body>
+</html>
