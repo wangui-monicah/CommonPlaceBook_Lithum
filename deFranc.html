@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Lais of Marie de France</title>
+    <link rel="stylesheet" href="./commonplace.css" />
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-size: 24px;
+        line-height: 1.5;
+      }
+      .artwork {
+        background-image: url("Marie de France/one.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 500px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+      }
+      .second_image {
+        background-image: url("Marie de France/two.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 250px;
+        padding-bottom: 250px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        }
+        .third_image {
+        background-image: url("Confessions by Augustine/third.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 250px;
+        padding-bottom: 250px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        }
+        .fourth_page {
+        background-color: black;
+        height: 100vh;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .artwork.show,
+      .second_image.show {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .third_image.show{
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+      .fourth_page.show {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="artwork">
+      <div class = "container">
+        <div class="this_text">
+          <p>"The powerful man takes as his right the love he desires,</p> 
+          <p>if but for a night."</p> 
+        </div>
+        </div>
+    </div>
+    <div class="black-bg">
+        <div class="text">
+            <p>"The powerful man takes as his right
+              the love he desires, if but for a night."</p>
+          </div>
+    </div>
+    <div class="second_image">
+      <div class = "container">
+        <div class = "second_text">
+          <p>"Love is not honorable,</p>
+          <p>unless it is based on equality"</p>
+    </div>
+    <div class = "third_text">
+      <p>If one has received from God the great</p> 
+      <p>gift of eloquence, it is his fate</p>
+      <p>and duty to exercise and display</p>
+      <p>these talents.</p>
+    </div>
+    </div>
+    </div>
+    <div class="fourth_page">
+      <div class = "fourth_page_text">
+        <a href = "./dante.html"><p>Inferno by Dante</p></a>
+    </div>
+    </div>
+    <script>
+      const artwork = document.querySelector('.artwork');
+      const second_image = document.querySelector('.second_image');
+      const third_image = document.querySelector('.third_image');
+      const fourth_page = document.querySelector('.fourth_page');
+      window.addEventListener('scroll', () => {
+      artwork.classList.add('show');
+      if (window.scrollY > 100) {
+        second_image.classList.add('show');
+      } else if (window.scrollY <= 100 && window.scrollY > 0) {
+        second_image.classList.remove('show');
+        third_image.classList.add('show');
+      } else if (window.scrollY <= 0){
+        second_image.classList.remove('show');
+        third_image.classList.add('show');
+      } else{
+        third_image.classList.remove('show');
+        fourth_page.classList.add('show');
+      }
+    });
+    </script>
+    <style>
+        .text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                font-size: 79px;
+                font-family: monospace;
+                animation: fade in 10s;
+            }
+      .black-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+      }
+      .show-black-bg {
+            opacity: 0.5;
+      }
+      .show-text {
+            opacity: 1;
+      }
+      .fourth_page_text{
+        font-family: monospace;
+        font-size: larger;
+        animation: fadeIn 20s;
+        border-radius: 10em;
+        padding: 1.5em;
+        margin: 2.0em 0;
+        box-shadow: rgb(255, 1, 1) 1px 4px 8px 0px;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .fourth_page_text :hover{
+        animation: magic 1s ease-in-out infinite;
+        color: #fb0404;
+      }
+      @keyframes magic {
+    0% {
+        text-shadow: 0 0 5px rgba(245, 87, 87, 0.5), 0 0 10px rgba(236, 101, 101, 0.5), 0 0 15px rgba(245, 86, 86, 0.5), 0 0 20px rgb(249, 104, 104);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 100, 97, 0.5), 0 0 10px rgba(231, 27, 27, 0.5), 0 0 15px rgba(244, 14, 2, 0.5), 0 0 20px rgb(244, 8, 8), 0 0 30px rgba(241, 5, 5, 0.2);
+    }
+}
+      a{
+        color: white;
+      }
+      .container {
+        position: relative;
+        width: 100%; /* set to your image's width */
+        height: 100%; /* set to your image's height */
+}
+      .this_text{
+        position: absolute;
+        bottom:0;
+        right: 0;
+        text-align: right;
+        font-size: smaller;
+        text-shadow: 0 0 0px rgb(230, 53, 53), 0 0 20px rgb(215, 100, 100), 0 0 30px rgb(206, 33, 33), 0 0 40px rgb(254, 107, 107), 0 0 70px rgb(255, 0, 0), 0 0 80px rgb(246, 58, 58), 0 0 100px rgb(255, 0, 0), 0 0 150px rgb(255, 0, 0);
+        font-family: monospace;
+      }
+      .second_text{
+        position: absolute;
+        bottom:0;
+        right: 0;
+        text-align: right;
+        font-size: 20px;
+        text-shadow: 0 0 10px rgb(166, 3, 3), 0 0 20px rgb(193, 8, 8), 0 0 30px rgb(138, 41, 41), 0 0 40px rgb(200, 4, 4), 0 0 70px rgb(251, 6, 6), 0 0 80px rgb(223, 66, 66), 0 0 100px rgb(255, 0, 0), 0 0 150px rgb(255, 0, 8);
+        font-family: monospace;
+      }
+      .third_text{
+        position: absolute;
+        top:0;
+        left:0;
+        text-align: left;
+        font-size: 20px;
+        text-shadow: 0 0 10px rgb(166, 3, 3), 0 0 20px rgb(193, 8, 8), 0 0 30px rgb(138, 41, 41), 0 0 40px rgb(200, 4, 4), 0 0 70px rgb(251, 6, 6), 0 0 80px rgb(223, 66, 66), 0 0 100px rgb(255, 0, 0), 0 0 150px rgb(255, 0, 8);
+        font-family: monospace;
+      }
+    </style>
+  </body>
+</html>
