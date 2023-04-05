@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Don Quixote by Cervantes</title>
+    <link rel="stylesheet" href="./commonplace.css" />
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-size: 24px;
+        line-height: 1.5;
+      }
+      .artwork {
+        background-image: url("Cervantes/one.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 500px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+      }
+      .second_image {
+        background-image: url("Marie de France/two.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 250px;
+        padding-bottom: 250px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        }
+        .third_image {
+        background-image: url("Confessions by Augustine/third.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 250px;
+        padding-bottom: 250px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        }
+        .fourth_page {
+        background-color: black;
+        height: 100vh;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .artwork.show,
+      .second_image.show {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .third_image.show{
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+      .fourth_page.show {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="artwork">
+      <div class = "container">
+        <div class = "this_text">
+          <p>"I would like this book</p>
+            <p>the child of my understanding</p>
+            <p>to be the most beautiful</p>
+            <p>the most brilliant</p>
+            <p>and the most discreet</p>
+            <p>that anyone could imagine"</p>
+        </div>
+        <div class = "second_text">
+          <p>"A father may have a child who is ugly</p>
+            <p>and lacking in all places</p>
+            <p>and the love he feels for him</p>
+            <p>puts a blind fold</p>
+            <p>over his eyes</p>
+    </div>
+    <div class = "third_text">
+      <p>"How do you intend to fill the void of my fear</p>
+      <p> and bring clarity to the chaos of my confusion"</p>
+</div>
+      </div>
+    </div>
+    <div class="black-bg">
+        <div class="text">
+            <p>"The truth may be stretched thin, but it never breaks, and it always surfaces above lies, as oil floats on water."</p>
+          </div>
+    </div>
+    <div class="fourth_page">
+      <div class = "fourth_page_text">
+        <a href = "./austen.html"><p>Pride and Prejudice by Austen</p></a>
+    </div>
+    </div>
+    <script>
+      const artwork = document.querySelector('.artwork');
+      const second_image = document.querySelector('.second_image');
+      const third_image = document.querySelector('.third_image');
+      const fourth_page = document.querySelector('.fourth_page');
+      window.addEventListener('scroll', () => {
+      artwork.classList.add('show');
+      if (window.scrollY > 100) {
+        second_image.classList.add('show');
+      } else if (window.scrollY <= 100 && window.scrollY > 0) {
+        second_image.classList.remove('show');
+        third_image.classList.add('show');
+      } else if (window.scrollY <= 0){
+        second_image.classList.remove('show');
+        third_image.classList.add('show');
+      } else{
+        third_image.classList.remove('show');
+        fourth_page.classList.add('show');
+      }
+    });
+    </script>
+    <style>
+        .text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                font-size: 79px;
+                font-family: monospace;
+                animation: fade in 10s;
+            }
+      .black-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+      }
+      .show-black-bg {
+            opacity: 0.5;
+      }
+      .show-text {
+            opacity: 1;
+      }
+      .fourth_page_text{
+        font-family: monospace;
+        font-size: larger;
+        animation: fadeIn 20s;
+        border-radius: 10em;
+        padding: 1.5em;
+        margin: 2.0em 0;
+        box-shadow: rgb(255, 225, 1) 1px 4px 8px 0px;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .fourth_page_text :hover{
+        animation: magic 1s ease-in-out infinite;
+        color: #fbea04;
+      }
+      @keyframes magic {
+    0% {
+        text-shadow: 0 0 5px rgba(245, 198, 87, 0.5), 0 0 10px rgba(236, 191, 101, 0.5), 0 0 15px rgba(245, 216, 86, 0.5), 0 0 20px rgb(249, 104, 104);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 229, 97, 0.5), 0 0 10px rgba(231, 194, 27, 0.5), 0 0 15px rgba(244, 212, 2, 0.5), 0 0 20px rgb(244, 213, 8), 0 0 30px rgba(241, 186, 5, 0.2);
+    }
+}
+      a{
+        color: white;
+      }
+      .container {
+        position: relative;
+        width: 100%; /* set to your image's width */
+        height: 100%; /* set to your image's height */
+}
+      .this_text{
+        position: absolute;
+        bottom:0;
+        right: 0;
+        text-align: right;
+        font-size: smaller;
+        text-shadow: 0 0 10px rgb(166, 3, 3), 0 0 20px rgb(193, 8, 8), 0 0 30px rgb(138, 41, 41), 0 0 40px rgb(200, 4, 4), 0 0 70px rgb(251, 6, 6), 0 0 80px rgb(223, 66, 66), 0 0 100px rgb(255, 0, 0), 0 0 150px rgb(255, 0, 8);
+        font-family: monospace;
+        color: #ffef15;
+      }
+      .second_text{
+        position: absolute;
+        bottom:0;
+        left: 0;
+        text-align: left;
+        font-size: small;
+        text-shadow: 0 0 10px rgb(166, 112, 3), 0 0 20px rgb(193, 137, 8), 0 0 30px rgb(138, 73, 41), 0 0 40px rgb(200, 37, 4), 0 0 70px rgb(251, 6, 6), 0 0 80px rgb(223, 66, 66), 0 0 100px rgb(255, 0, 0), 0 0 150px rgb(255, 0, 8);
+        font-family: monospace;
+        color: yellow;
+      }
+      .third_text{
+        position: absolute;
+        top:0;
+        left:0;
+        text-align: left;
+        font-size: 20px;
+        text-shadow: 0 0 10px rgb(166, 3, 3), 0 0 20px rgb(193, 8, 8), 0 0 30px rgb(138, 41, 41), 0 0 40px rgb(200, 4, 4), 0 0 70px rgb(251, 6, 6), 0 0 80px rgb(223, 66, 66), 0 0 100px rgb(255, 0, 0), 0 0 150px rgb(255, 0, 8);
+        font-family: monospace;
+        color: rgb(251, 255, 9);
+      }
+    </style>
+  </body>
+</html>
