@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Confessions by St.Augustine</title>
+    <link rel="stylesheet" href="./commonplace.css" />
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-size: 24px;
+        line-height: 1.5;
+      }
+      .artwork {
+        background-image: url("Confessions by Augustine/DALL·E 2023-03-29 22.59.13 - A painting of Time relativity and  God as the state of presence; no past or future exists within his realm becausePast and future only exist within th.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 500px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+      }
+      .second_image {
+        background-image: url("Confessions by Augustine/DALL·E 2023-03-29 22.59.18 - A painting of Time relativity and  God as the state of presence; no past or future exists within his realm becausePast and future only exist within th.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 250px;
+        padding-bottom: 250px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        }
+        .third_image {
+        background-image: url("Confessions by Augustine/third.png");
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+        padding-top: 250px;
+        padding-bottom: 250px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        }
+        .fourth_page {
+        background-color: black;
+        height: 100vh;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .artwork.show,
+      .second_image.show {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .third_image.show{
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+      .fourth_page.show {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="artwork"></div>
+    <div class="black-bg">
+        <div class="text">
+            <p>"Your Today is Eternity"</p>
+          </div>
+    </div>
+    <div class="second_image">
+      <div class = "container">
+        <div class="this_text">
+          <p>"Your Today is Eternity"</p>
+        </div>
+        </div>
+    </div>
+    <div class="third_image"></div>
+    <div class="fourth_page">
+      <div class = "fourth_page_text">
+        <a href = "./deFranc.html"><p>The Lais of Marie de France.</p></a>
+    </div>
+    </div>
+    <script>
+      const artwork = document.querySelector('.artwork');
+      const second_image = document.querySelector('.second_image');
+      const third_image = document.querySelector('.third_image');
+      const fourth_page = document.querySelector('.fourth_page');
+      window.addEventListener('scroll', () => {
+      artwork.classList.add('show');
+      if (window.scrollY > 100) {
+        second_image.classList.add('show');
+      } else if (window.scrollY <= 100 && window.scrollY > 0) {
+        second_image.classList.remove('show');
+        third_image.classList.add('show');
+      } else if (window.scrollY <= 0){
+        second_image.classList.remove('show');
+        third_image.classList.add('show');
+      } else{
+        third_image.classList.remove('show');
+        fourth_page.classList.add('show');
+      }
+    });
+    </script>
+    <style>
+        .text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                font-size: 79px;
+                font-family: monospace;
+                animation: fade in 10s;
+            }
+      .black-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+      }
+      .show-black-bg {
+            opacity: 0.5;
+      }
+      .show-text {
+            opacity: 1;
+      }
+      .fourth_page_text{
+        font-family: monospace;
+        font-size: larger;
+        animation: fadeIn 20s;
+        border-radius: 10em;
+        padding: 1.5em;
+        margin: 2.0em 0;
+        box-shadow: rgb(1, 204, 255) 1px 4px 8px 0px;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .fourth_page_text :hover{
+        animation: magic 1s ease-in-out infinite;
+        color: #04e6fb;
+      }
+      @keyframes magic {
+    0% {
+        text-shadow: 0 0 5px rgba(87, 227, 245, 0.5), 0 0 10px rgba(101, 223, 236, 0.5), 0 0 15px rgba(86, 234, 245, 0.5), 0 0 20px rgb(104, 213, 249);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(97, 221, 255, 0.5), 0 0 10px rgba(27, 203, 231, 0.5), 0 0 15px rgba(2, 244, 236, 0.5), 0 0 20px rgb(8, 212, 244), 0 0 30px rgba(5, 210, 241, 0.2);
+    }
+}
+      a{
+        color: white;
+      }
+      .container {
+        position: relative;
+        width: 100%; /* set to your image's width */
+        height: 100%; /* set to your image's height */
+}
+      .this_text{
+        position: absolute;
+        top:0;
+        right: 0;
+        text-align: right;
+        font-size: larger;
+        text-shadow: 0 0 10px rgb(58, 219, 255), 0 0 20px rgb(26, 250, 242), 0 0 30px rgb(16, 233, 252), 0 0 40px rgb(0, 202, 252), 0 0 70px rgb(207, 221, 238), 0 0 80px rgb(38, 201, 255), 0 0 100px rgb(211, 235, 235), 0 0 150px rgb(203, 232, 232);
+        font-family: monospace;
+        font-weight: bold;
+      }
+    </style>
+  </body>
+</html>
